@@ -1,22 +1,20 @@
-/*  Gender.java
-    Gender POJO class
+/*  Seller.java
+    Seller POJO class
     Author: AsandaNdhlela (230614345)
     Date: 11 May 2025
 */
 package za.ac.cput.domain;
 
-public class Seller extends Student{
+public class Seller {
     protected int sellerId;
     protected String sellerName;
     protected String sellerLastName;
     protected String sellerEmail;
     protected String sellerPhoneNumber;
 
-    private Seller(){
-        super();
-    }
+    private Seller(){}
+
     private Seller(Builder build) {
-        super(build);
 
         this.sellerId = build.sellerId;
         this.sellerName = build.sellerName;
@@ -50,7 +48,7 @@ public class Seller extends Student{
                 '}';
     }
 
-    public static class Builder extends Student.Builder{
+    public static class Builder{
         private int sellerId;
         private String sellerName;
         private String sellerLastName;
@@ -79,7 +77,6 @@ public class Seller extends Student{
         }
 
         public Builder copy(Seller seller){
-            super.copy(seller);
 
             this.sellerId = seller.sellerId;
             this.sellerName = seller.sellerName;
