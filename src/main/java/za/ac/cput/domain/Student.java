@@ -1,15 +1,20 @@
+/*  Seller.java
+    Seller POJO class
+    Author: AsandaNdhlela (230614345)
+    Date: 11 May 2025
+*/
+
 package za.ac.cput.domain;
-//import za.ac.cput.domain.demography.Identity;
-//import za.ac.cput.domain.demography.Gender;
+
+import java.time.LocalDate;
 
 public class Student {
     protected int studentNumber;
     protected String firstName;
     protected String lastName;
-//    protected Identity identity ;
-//  protected Residence residence;
-//  protected Contact contact;
-   // protected Gender gender;
+    protected LocalDate dateOfBirth;
+    protected String identityNumber;
+
 
     protected Student(){}
 
@@ -17,9 +22,9 @@ public class Student {
         this.studentNumber = build.studentNumber;
         this.firstName = build.firstName;
         this.lastName = build.lastName;
-        //this.identity = build.identity;
-        //this.residence = build.residence;
-        //this.contact = build.contact;
+        this.dateOfBirth = build.dateOfBirth;
+        this.identityNumber = build.identityNumber;
+
     }
     public int getStudentId() {
         return studentNumber;
@@ -30,9 +35,12 @@ public class Student {
     public String getLastName() {
         return lastName;
     }
-    //public Identity getIdentity() {}
-    //public Residence getResidence() {}
-    //public Contact getContact() {}
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+    public String getIdentityNumber() {
+        return identityNumber;
+    }
 
     @Override
     public String toString() {
@@ -40,18 +48,17 @@ public class Student {
                 "studentId=" + studentNumber +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                //", identity=" + identity +
-                //", residence=" + residence +
-                //", contact=" + contact +
+                ", dateOfBirth=" + dateOfBirth +
+                ", identityNumber='" + identityNumber + '\'' +
                 '}';
     }
     public static class Builder{
         private int studentNumber;
         private String firstName;
         private String lastName;
-        //private Identity identity;
-        //private Residence residence;
-        //private Contact contact;
+        private LocalDate dateOfBirth;
+        private String identityNumber;
+
 
         public Builder setStudentId(int studentNumber) {
             this.studentNumber = studentNumber;
@@ -65,17 +72,21 @@ public class Student {
             this.lastName = lastName;
             return this;
         }
-       // public Builder setIdentity(Identity identity) {}
-       // public Builder setResidence(Residence residence) {}
-       // public Builder setContact(Contact contact) {}
+        public Builder setDateOfBirth(LocalDate dateOfBirth) {
+            this.dateOfBirth = dateOfBirth;
+            return this;
+        }
+        public Builder setIdentityNumber(String identityNumber) {
+            this.identityNumber = identityNumber;
+            return this;
+        }
 
         public Builder copy(Student student){
             this.studentNumber = student.studentNumber;
             this.firstName = student.firstName;
             this.lastName = student.lastName;
-            //this.identity = student.identity;
-            //this.residence = student.residence;
-            //this.contact = student.contact;
+            this.dateOfBirth = student.dateOfBirth;
+            this.identityNumber = student.identityNumber;
             return this;
     }
 
