@@ -1,6 +1,6 @@
-/*  Seller.java
-    Seller POJO class
-    Author: AsandaNdhlela (230614345)
+/*  Student.java
+    Student POJO class
+    Author: Asanda_Ndhlela (230614345)
     Date: 11 May 2025
 */
 
